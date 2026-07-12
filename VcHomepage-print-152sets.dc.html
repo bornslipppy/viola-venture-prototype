@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
@@ -37,7 +46,7 @@
   .apt-iconbtn__sweep,
   .deep-arrow__sweep { background: #BADBEE !important; transition: transform 0.11s cubic-bezier(.4,0,.2,1) !important; }
 
-  /* Hover: restore normal sweep-in speed */
+  /* Buttons turn lime on hover — keep normal sweep-in speed */
   .apt-btn:hover .apt-btn__sweep,
   .apt-iconbtn:hover .apt-iconbtn__sweep,
   .deep-card:hover .deep-arrow__sweep { transition: transform 0.15s cubic-bezier(.4,0,.2,1) !important; }
@@ -184,13 +193,43 @@
 
 <div class="vc-page" data-screen-label="VC Homepage" style="background:var(--surface-100);color:var(--inverted-100);font-family:var(--font-sans)">
 
-  
-  
+  <template id="gl-logo-tpl"><svg class="gl-logo" viewBox="0 0 192 156" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Viola Ventures">
+    <path d="M0.0601525 96.0343C-0.0681067 85.1991 0.0490343 74.1239 0.0464313 63.2688L0.0476156 1.31921C10.1723 1.12961 20.8344 1.29625 30.9933 1.29554L89.7983 1.30904L89.7675 95.7853L89.1404 96.0466L0.0601525 96.0343Z" fill="currentColor"></path>
+    <g clip-path="url(#gl-band-window)">
+      <g class="gl-band">
+        <path d="M190.063 0.0527854C190.804 -0.0056833 190.955 -0.0509013 191.663 0.11835C192.16 0.820685 191.961 17.9492 191.961 20.1402L191.956 59.2785C186.471 59.5252 182.772 62.1655 180.342 66.9768C178.555 70.5126 176.797 74.0794 174.996 77.6055L162.653 101.931C156.503 114.075 151.987 124.807 142.008 134.382C126.877 148.903 109.79 155.148 89.1452 155.025C88.9535 148.699 89.1215 141.48 89.1191 135.098L89.1404 96.0466L89.7675 95.7853C90.5508 95.7891 91.3341 95.7713 92.115 95.7322C98.1659 95.4124 101.334 92.0217 103.836 86.8796C105.447 83.5622 107.177 80.1968 108.838 76.897L121.04 52.8505C126.321 42.431 130.678 32.3358 138.643 23.7108C152.74 8.44908 169.61 1.12203 190.063 0.0527854Z" fill="currentColor"></path>
+        <path transform="translate(-104 156)" d="M190.063 0.0527854C190.804 -0.0056833 190.955 -0.0509013 191.663 0.11835C192.16 0.820685 191.961 17.9492 191.961 20.1402L191.956 59.2785C186.471 59.5252 182.772 62.1655 180.342 66.9768C178.555 70.5126 176.797 74.0794 174.996 77.6055L162.653 101.931C156.503 114.075 151.987 124.807 142.008 134.382C126.877 148.903 109.79 155.148 89.1452 155.025C88.9535 148.699 89.1215 141.48 89.1191 135.098L89.1404 96.0466L89.7675 95.7853C90.5508 95.7891 91.3341 95.7713 92.115 95.7322C98.1659 95.4124 101.334 92.0217 103.836 86.8796C105.447 83.5622 107.177 80.1968 108.838 76.897L121.04 52.8505C126.321 42.431 130.678 32.3358 138.643 23.7108C152.74 8.44908 169.61 1.12203 190.063 0.0527854Z" fill="currentColor"></path>
+      </g>
+    </g>
+    <defs>
+      <clipPath id="gl-band-window"><rect x="88" y="-1" width="106" height="158"></rect></clipPath>
+    </defs>
+  </svg></template>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="viola-outline-logo" fill="currentColor">
+        <path d="M190.063 0.0527948C190.803 -0.00566071 190.955 -0.0508914 191.662 0.118224C192.159 0.82056 191.961 17.9497 191.961 20.1407L191.956 59.2784C186.471 59.525 182.772 62.1655 180.342 66.9766L176.34 74.9542C175.894 75.8397 175.446 76.7239 174.996 77.6055L162.652 101.931C156.502 114.075 151.987 124.807 142.008 134.383C126.877 148.903 109.79 155.148 89.1455 155.025C88.9778 149.49 89.0853 143.271 89.1133 137.527L89.1192 135.098L89.1406 96.047L0.0605132 96.0343C-0.0356792 87.9079 0.00538074 79.6466 0.0312163 71.4444L0.0468413 63.2686L0.0478178 1.3194C10.1724 1.1298 20.8343 1.29667 30.9931 1.29596L89.7979 1.30865L89.7676 95.7852C90.3552 95.7881 90.9428 95.7792 91.5293 95.7579L92.1153 95.7325C97.977 95.4226 101.134 92.2307 103.6 87.3565L103.836 86.88C104.642 85.2213 105.477 83.5504 106.318 81.8819L108.838 76.8975L121.04 52.8507C126.157 42.7567 130.405 32.9669 137.907 24.5235L138.644 23.711C152.74 8.44941 169.61 1.12211 190.063 0.0527948ZM190.806 1.00201C190.666 1.0046 190.513 1.02059 190.142 1.04987L190.128 1.05084L190.115 1.05182C169.904 2.10841 153.285 9.3328 139.378 24.3897C132.023 32.3535 127.8 41.5735 122.918 51.3419L121.932 53.3028L109.731 77.3497L109.73 77.3487C108.064 80.658 106.342 84.0084 104.735 87.3165V87.3175C103.455 89.9497 101.96 92.2268 99.9414 93.8868C97.9014 95.5643 95.3877 96.5603 92.168 96.7306L92.1651 96.7315C91.4912 96.7652 90.8155 96.7817 90.1397 96.7843L90.1192 135.099C90.1214 141.19 89.9702 147.96 90.1182 154.025C110.087 153.948 126.623 147.762 141.316 133.661C151.142 124.233 155.573 113.698 161.761 101.48V101.479L174.105 77.1534L174.106 77.1505C175.006 75.3868 175.894 73.6189 176.78 71.8477L179.449 66.5255C180.724 64.0027 182.359 61.9945 184.443 60.587C186.299 59.3344 188.464 58.5899 190.956 58.3477L190.961 20.1397C190.961 19.0104 191.011 14.2304 190.998 9.5733C190.992 7.25386 190.97 4.98958 190.919 3.26471C190.894 2.40032 190.862 1.68359 190.821 1.16803C190.817 1.10914 190.81 1.05392 190.806 1.00201ZM1.04684 63.2686C1.04937 73.8086 0.940604 84.5222 1.05075 95.0343L88.7676 95.046L88.7969 2.30768L30.9931 2.29596C21.1401 2.29665 10.865 2.14024 1.04684 2.30182V63.2686Z"></path>
+        <path d="M1072.03 119C1054.54 119 1043.5 110.563 1043.12 96.9156H1055.16C1055.66 104.856 1062.23 109.447 1072.53 109.447C1081.71 109.447 1087.05 105.104 1087.05 99.397C1087.05 83.0199 1044.99 97.536 1044.99 70.737C1044.99 58.8263 1055.53 50.5137 1072.65 50.5137C1088.29 50.5137 1098.58 59.1985 1099.58 72.9702H1087.54C1087.17 64.9057 1081.21 60.067 1071.54 60.067C1062.73 60.067 1057.52 64.4094 1057.52 70.2407C1057.52 85.9975 1099.7 71.7295 1099.7 99.273C1099.7 111.184 1089.15 119 1072.03 119Z"></path>
+        <path d="M1000.52 119C981.41 119 967.763 104.732 967.763 84.6328C967.763 64.6576 981.41 50.5137 1000.52 50.5137C1016.27 50.5137 1029.55 62.3003 1029.55 83.7643V88.7271H980.79C981.659 100.514 988.606 108.578 1000.52 108.578C1009.2 108.578 1015.03 103.491 1016.27 98.2804H1028.93C1026.94 109.695 1015.78 119 1000.52 119ZM980.79 79.2978H1016.89C1016.4 68.7519 1009.7 61.3077 1000.14 61.3077C989.103 61.3077 982.403 68.5037 980.79 79.2978Z"></path>
+        <path d="M925.172 117.015V52.4987H937.207V64.7816C941.425 56.0967 950.234 51.7543 963.013 51.7543V63.5409C947.752 63.5409 937.207 68.9999 937.207 80.6625V117.015H925.172Z"></path>
+        <path d="M906.66 52.4988V117.015H894.129V105.973C889.538 113.789 881.97 119 871.3 119C855.667 119 847.727 109.447 847.727 90.9603V52.4988H860.382V90.5881C860.382 101.382 865.717 108.206 875.022 108.206C886.436 108.206 894.129 98.1563 894.129 84.3846V52.4988H906.66Z"></path>
+        <path d="M830.073 116.891C811.587 118.628 801.785 117.883 802.157 99.6451V63.665H788.386V52.4988H802.157V35.129H814.813V52.4988H833.299V63.665H814.813V94.9305C814.813 105.6 815.309 106.965 830.073 105.849V116.891Z"></path>
+        <path d="M718.228 117.015V52.4988H730.883V63.541C735.474 55.7246 742.918 50.5137 753.588 50.5137C769.221 50.5137 777.285 60.067 777.285 78.5534V117.015H764.506V78.9256C764.506 68.1315 759.295 61.3077 749.866 61.3077C738.451 61.3077 730.883 71.3573 730.883 85.1291V117.015H718.228Z"></path>
+        <path d="M673.138 119C654.031 119 640.384 104.732 640.384 84.6328C640.384 64.6576 654.031 50.5137 673.138 50.5137C688.895 50.5137 702.17 62.3003 702.17 83.7643V88.7271H653.411C654.28 100.514 661.227 108.578 673.138 108.578C681.823 108.578 687.654 103.491 688.895 98.2804H701.55C699.565 109.695 688.399 119 673.138 119ZM653.411 79.2978H689.515C689.019 68.7519 682.319 61.3077 672.766 61.3077C661.724 61.3077 655.024 68.5037 653.411 79.2978Z"></path>
+        <path d="M591.939 117.015L562.286 52.4988H575.686L598.887 102.995L622.088 52.4988H635.611L605.959 117.015H591.939Z"></path>
+        <path d="M475.064 119C460.3 119 453.228 109.695 453.228 99.8933C453.228 88.4789 463.029 81.531 482.012 79.4218L497.52 77.6849V73.9628C497.644 66.0224 493.054 61.3077 482.756 61.3077C472.955 61.3077 467.371 66.2705 467.371 74.335H455.461C455.461 59.3226 465.51 50.5137 483.004 50.5137C500.746 50.5137 510.175 59.1985 510.175 73.9628V100.886C510.175 106.221 511.168 108.082 516.255 107.586L516.007 116.519C504.22 119.868 499.009 115.03 498.265 104.856C494.667 113.789 486.726 119 475.064 119ZM477.793 109.074C488.587 109.074 496.9 99.6452 497.272 87.6104L485.61 88.8511C472.458 90.34 465.759 93.5658 465.759 99.6452C465.759 104.112 468.86 109.074 477.793 109.074Z"></path>
+        <path d="M423.078 117.015V19H435.733V117.015H423.078Z"></path>
+        <path d="M375.566 119C356.459 119 342.812 104.732 342.812 84.6328C342.812 64.6576 356.459 50.5137 375.566 50.5137C394.797 50.5137 408.444 64.6576 408.444 84.6328C408.444 104.732 394.797 119 375.566 119ZM375.566 108.206C387.352 108.206 395.665 98.4045 395.665 84.6328C395.665 70.9851 387.352 61.3077 375.566 61.3077C363.903 61.3077 355.591 70.9851 355.591 84.6328C355.591 98.4045 363.903 108.206 375.566 108.206Z"></path>
+        <path d="M320.721 42.6973C315.634 42.6973 311.664 38.8511 311.664 33.7643C311.664 28.8015 315.634 24.8313 320.721 24.8313C325.808 24.8313 329.654 28.8015 329.654 33.7643C329.654 38.8511 325.56 42.6973 320.721 42.6973ZM314.518 117.015V52.4988H327.049V117.015H314.518Z"></path>
+        <path d="M261.653 117.015L232 52.4988H245.4L268.6 102.995L291.801 52.4988H305.325L275.672 117.015H261.653Z"></path>
+      </g>
+    </defs>
+  </svg>
 
   <!-- HEADER -->
   <div style="position:sticky;top:16px;z-index:60;display:flex;justify-content:center;padding:0 var(--content-gutter);pointer-events:none">
     <div style="pointer-events:auto;width:100%;display:flex;justify-content:center;align-items:center;position:relative">
-      <x-import component-from-global-scope="AptosDesignSystem_1112d2.NavBar" items="{{ navItems }}" hint-size="600px,60px"></x-import>
+      <x-import component-from-global-scope="AptosDesignSystem_1112d2.NavBar" items="{{ navItems }}" cta-label="Investor Login" hint-size="600px,60px"></x-import>
       <a href="#" class="nav-login" style="position:absolute;right:0">Investor Login</a>
     </div>
   </div>
@@ -198,7 +237,7 @@
   <section ref="{{ heroRef }}" style="background:linear-gradient(to left, var(--accent-blue), var(--accent-blue) 18%, var(--color-white));margin-top:-76px;padding:144px var(--content-gutter) 64px">
     <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center">
       <div>
-        <h1 style="font-family:var(--font-serif);font-weight:300;font-size:clamp(2.75rem, calc(1.4rem + 5vw), 4.75rem);line-height:1.06;letter-spacing:-0.02em;color:var(--color-black);margin:0"><span>Early </span><span ref="{{ rotRef }}" style="position:relative;display:inline-block;vertical-align:baseline;white-space:nowrap;letter-spacing:-0.02em;text-transform:capitalize;font-family:'Season VF'"><span style="visibility:hidden;font-variation-settings:'SERF' 100;font-weight:300">Customers</span><span ref="{{ curRef }}" style="position:absolute;top:0;left:0;white-space:nowrap;font-variation-settings:'SERF' 100;font-weight:300">Moves</span><span ref="{{ nextRef }}" style="position:absolute;top:0;left:0;white-space:nowrap;font-variation-settings:'SERF' 100;font-weight:300"></span></span><br><span>Matter.</span></h1>
+        <h1 style="font-family:var(--font-serif);font-weight:300;font-size:clamp(2.75rem, calc(1.4rem + 5vw), 4.75rem);line-height:1.06;letter-spacing:-0.02em;color:var(--color-black);margin:0"><span>Early </span><span ref="{{ rotRef }}" style="position:relative;display:inline-block;vertical-align:baseline;white-space:nowrap;letter-spacing:-0.02em;text-transform:capitalize;font-family:'Season VF'"><span style="visibility:hidden;font-variation-settings:'SERF' 100;font-weight:300">Customers</span><span ref="{{ curRef }}" style="position:absolute;top:0;left:0;white-space:nowrap;font-variation-settings:'SERF' 100;font-weight:300">Moves</span><span ref="{{ nextRef }}" style="position:absolute;top:0;left:0;white-space:nowrap;font-variation-settings:'SERF' 100;font-weight:300"></span></span><span> Matter.</span></h1>
         <p style="font-family:var(--font-sans);font-size:var(--text-lg);line-height:1.5;color:rgba(15,14,11,0.72);margin:28px 0 0;max-width:46ch">The decisions you make in the first year determine everything that follows. We partner with industry-defining founders from the spark moment, helping accelerate velocity at the critical inflection points and amplify momentum as they build.</p>
         <form onSubmit="{{ prevent }}" style="display:flex;align-items:center;gap:10px;background:var(--surface-100);border:1px solid var(--border);border-radius:var(--radius-full);padding:8px 8px 8px 26px;max-width:440px;margin-top:32px">
           <input placeholder="Ask me anything" style="flex:1;border:0;background:none;font-family:var(--font-sans);font-size:var(--text-lg);color:var(--inverted-100);outline:none">
@@ -624,10 +663,10 @@
       <span style="font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary)">Currents / Blog</span>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start">
 
       <!-- CARD 1 -->
-      <article class="deep-card" style="display:flex;flex-direction:column;height:100%;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
+      <article class="deep-card" style="display:flex;flex-direction:column;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
         <div style="position:relative;overflow:hidden;background:transparent;color:var(--color-black);display:flex;flex-direction:column">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 24px 0;position:relative;z-index:2">
             <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase">The VC Perspective</span>
@@ -635,9 +674,9 @@
           </div>
           <h3 style="font-family:var(--font-serif);font-weight:400;font-size:33px;line-height:1.0;letter-spacing:-0.02em;margin:0;padding:40px 24px 22px;position:relative;z-index:2">An idea and a PowerPoint deck</h3>
         </div>
-        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
+        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px">
           <h4 style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-lg);line-height:1.55;color:rgba(15,14,11,0.66);margin:0">Why It’s Pointless to Approach Potential Investors with Nothing More Than an Idea and a PowerPoint Deck</h4>
-          <div style="margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
+          <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
             <span>4M</span></span><span class="deep-arrow" style="position:relative;overflow:hidden;z-index:0;flex:none;display:flex;align-items:center;justify-content:center;aspect-ratio:1;height:36px;border:1px solid var(--border);border-radius:999px;transition:color 0.15s"><span class="deep-arrow__sweep" style="display:block;z-index:-1;position:absolute;inset:0;border-radius:999px;transform:scaleX(0);transform-origin:right;transition:transform 0.15s cubic-bezier(.4,0,.2,1);background:var(--color-black)"></span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 12H1.5"></path><path d="M22.5 12C18.64 12 15.5 8.86 15.5 5"></path><path d="M22.5 12C18.64 12 15.5 15.14 15.5 19"></path></svg></span>
           </div>
@@ -645,7 +684,7 @@
       </article>
 
       <!-- CARD 2 -->
-      <article class="deep-card" style="display:flex;flex-direction:column;height:100%;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
+      <article class="deep-card" style="display:flex;flex-direction:column;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
         <div style="position:relative;overflow:hidden;background:transparent;color:var(--color-black);display:flex;flex-direction:column">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 24px 0;position:relative;z-index:2">
             <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase">Marketing</span>
@@ -653,9 +692,9 @@
           </div>
           <h3 style="font-family:var(--font-serif);font-weight:400;font-size:34px;line-height:1.0;letter-spacing:-0.02em;margin:0;padding:40px 24px 22px;position:relative;z-index:2">Growth hacker overnight</h3>
         </div>
-        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
+        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px">
           <h4 style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-lg);line-height:1.55;color:rgba(15,14,11,0.66);margin:0">How I Became a Growth Hacker Overnight (and Why I Still Think of Myself as a Marketer)</h4>
-          <div style="margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
+          <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
             <span>6M</span></span><span class="deep-arrow" style="position:relative;overflow:hidden;z-index:0;flex:none;display:flex;align-items:center;justify-content:center;aspect-ratio:1;height:36px;border:1px solid var(--border);border-radius:999px;transition:color 0.15s"><span class="deep-arrow__sweep" style="display:block;z-index:-1;position:absolute;inset:0;border-radius:999px;transform:scaleX(0);transform-origin:right;transition:transform 0.15s cubic-bezier(.4,0,.2,1);background:var(--color-black)"></span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 12H1.5"></path><path d="M22.5 12C18.64 12 15.5 8.86 15.5 5"></path><path d="M22.5 12C18.64 12 15.5 15.14 15.5 19"></path></svg></span>
           </div>
@@ -663,7 +702,7 @@
       </article>
 
       <!-- CARD 3 -->
-      <article class="deep-card" style="display:flex;flex-direction:column;height:100%;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
+      <article class="deep-card" style="display:flex;flex-direction:column;border:1px solid var(--border);background:linear-gradient(to left, var(--accent-mint) 0%, var(--color-white) 42%)">
         <div style="position:relative;overflow:hidden;background:transparent;color:var(--color-black);display:flex;flex-direction:column">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 24px 0;position:relative;z-index:2">
             <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase">Startup Resources</span>
@@ -671,9 +710,9 @@
           </div>
           <h3 style="font-family:var(--font-serif);font-weight:400;font-size:33px;line-height:1.0;letter-spacing:-0.02em;margin:0;padding:40px 24px 22px;position:relative;z-index:2">The MVP methodology trap</h3>
         </div>
-        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px;flex:1">
+        <div style="color:var(--color-black);padding:18px 24px 20px;display:flex;flex-direction:column;gap:10px">
           <h4 style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-lg);line-height:1.55;color:rgba(15,14,11,0.66);margin:0">The Obstacles of Using MVP Methodology (and How to Avoid Them in Your Startup)</h4>
-          <div style="margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
+          <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(15,14,11,0.66)"><span style="display:flex;align-items:center;gap:8px">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
             <span>4M</span></span><span class="deep-arrow" style="position:relative;overflow:hidden;z-index:0;flex:none;display:flex;align-items:center;justify-content:center;aspect-ratio:1;height:36px;border:1px solid var(--border);border-radius:999px;transition:color 0.15s"><span class="deep-arrow__sweep" style="display:block;z-index:-1;position:absolute;inset:0;border-radius:999px;transform:scaleX(0);transform-origin:right;transition:transform 0.15s cubic-bezier(.4,0,.2,1);background:var(--color-black)"></span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 12H1.5"></path><path d="M22.5 12C18.64 12 15.5 8.86 15.5 5"></path><path d="M22.5 12C18.64 12 15.5 15.14 15.5 19"></path></svg></span>
           </div>
@@ -750,6 +789,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.heroRef = React.createRef();
+    this.railRef = React.createRef();
     this.rotRef = React.createRef();
     this.curRef = React.createRef();
     this.nextRef = React.createRef();
@@ -824,6 +864,10 @@ class Component extends DCLogic {
   initParallax() {
     const imgs = document.querySelectorAll(".parallax-img");
     if (!imgs.length) { setTimeout(() => this.initParallax(), 300); return; }
+    // Give Scott & Stu more headroom by showing more of the top of their frame.
+    imgs.forEach((img) => {
+      if (/Scott Galit|Stu Solomon|Jim Whitehurst/.test(img.alt)) img.style.objectPosition = "center 22%";
+    });
     const update = () => {
       const vh = window.innerHeight;
       imgs.forEach((img) => {
@@ -983,6 +1027,11 @@ class Component extends DCLogic {
   }
   renderVals() {
     const IMG = "assets/images/";
+    const mono = this.props.sectorStyle === "Mono";
+    const railStep = () => {
+      const r = this.railRef.current;
+      return r ? r.clientWidth * 0.8 : 320;
+    };
     return {
       prevent: (e) => e && e.preventDefault && e.preventDefault(),
       eventDiamond: [
@@ -992,9 +1041,13 @@ class Component extends DCLogic {
       videoRef: this.videoRef,
       heroCaptionRef: this.heroCaptionRef,
       heroRef: this.heroRef,
+      railRef: this.railRef,
       rotRef: this.rotRef,
       curRef: this.curRef,
       nextRef: this.nextRef,
+      heroSizer: this.words.reduce((a, b) => (b.length > a.length ? b : a), ""),
+      scrollLeft: () => { const r = this.railRef.current; if (r) r.scrollBy({ left: -railStep(), behavior: "smooth" }); },
+      scrollRight: () => { const r = this.railRef.current; if (r) r.scrollBy({ left: railStep(), behavior: "smooth" }); },
       showLogos: this.props.showLogoMarquee !== false,
       learnBtnProps: { style: { width: "180px", justifyContent: "space-between" } },
       tickerItems: [0, 1, 2, 3].map((i) =>
@@ -1019,6 +1072,22 @@ class Component extends DCLogic {
         );
       }),
       navItems: ["Portfolio", "Team", "Verticals", "Perspectives"],
+      logos: ["ironSource", "Redis", "Via", "CYE", "Payoneer", "Mellanox", "Aryon", "SunGard", "Faye", "Red Hat"],
+      threeCs: [
+        { title: "Clarity", eyebrow: "The 3Cs", variant: "fill-mint", link: "How we sharpen clarity", desc: "We work with founders to pressure-test product-market fit, sharpen the ICP, and tighten GTM motion so the team knows what wins next." },
+        { title: "Customers", eyebrow: "The 3Cs", variant: "fill-blue", link: "Meet the right buyers", desc: "We offer curated access to hundreds of real buyers, design partners, and operators who can validate the wedge and convert when the product is ready." },
+        { title: "Capital", eyebrow: "The 3Cs", variant: "fill-lime", link: "The right next capital", desc: "Capital goes far beyond funding. We help shape the early syndicate, bring in key talent and advisors, and position for the right next capital when timing creates leverage." },
+      ],
+      leaders: [
+        { name: "Tomer Bar-Zeev", role: "Co-founder & former CEO of ironSource, acquired by Unity", img: IMG + "img-tomer-barzeev.png" },
+        { name: "Jim Whitehurst", role: "Former CEO of Red Hat", img: IMG + "img-jim-whitehurst.png" },
+        { name: "Lior Gerenstein", role: "CTO of Via", img: IMG + "img-lior-gerenstein.png" },
+        { name: "Eyal Waldman", role: "Founder & former CEO of Mellanox, acquired by NVIDIA", img: IMG + "img-eyal-waldman.png" },
+        { name: "Yiftach Shulman", role: "Co-Founder of Redis", img: IMG + "img-yiftach-shulman.png" },
+        { name: "Reuven (Rubi) Aronashvili", role: "Founder & CEO of CYE", img: IMG + "img-rubi-aronashvili.png" },
+        { name: "Scott Galit", role: "Former CEO of Payoneer", img: IMG + "img-stu-solomon.png" },
+        { name: "Cris Conde", role: "Former CEO of SunGard", img: IMG + "img-cris-conde.png" },
+      ].map((l) => ({ ...l, imgStyle: l.name === "Eyal Waldman" ? { width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1)", transform: "scale(0.85)", objectPosition: "70% center" } : { width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1)" } })),
       lookingFor: [
         { title: "Tomer Bar-Zeev", tagline: "Co-founder & former CEO of ironSource", status: "IPO/acquired", desc: "Tomer helped build one of Israel’s defining global technology companies and led it through its landmark combination with Unity. He brings founders hard-earned perspective on category creation, monetization, scaling culture, and navigating strategic outcomes at global scale." },
         { title: "Jim Whitehurst", tagline: "Former CEO of Red Hat", status: "IPO/acquired", desc: "Jim Whitehurst led Red Hat through its evolution into the world’s leading enterprise open-source company and its $34B acquisition by IBM. His experience spans open ecosystems, enterprise transformation, public-company leadership, and the operating discipline required to turn developer trust into enduring business value." },
@@ -1030,6 +1099,13 @@ class Component extends DCLogic {
         { title: "Scott Galit", tagline: "Former CEO of Payoneer", status: "IPO/acquired", desc: "Scott helped turn a cross-border payments company into a global public fintech platform. He brings founders deep perspective on fintech infrastructure, marketplace economics, regulated growth, global expansion, and building financial products that can scale across borders and customer segments." },
         { title: "Cris Conde", tagline: "Former CEO of SunGard", status: "acquired", desc: "Cris led one of the most important enterprise software companies in financial technology. His experience spans large-scale software operations, financial services infrastructure, private-equity transformation, and the kind of strategic pattern recognition that helps founders build for durability." },
       ].map((p, i, arr) => ({ ...p, num: String(i + 1).padStart(2, "0") + " / " + arr.length, img: p.title === "Eyal Waldman" ? IMG + "img-eyal-waldman.png" : p.title === "Jim Whitehurst" ? IMG + "img-jim-whitehurst.png" : p.title === "Reuven (Rubi) Aronashvili" ? IMG + "img-rubi-aronashvili.png" : p.title === "Yiftach Shulman" ? IMG + "img-yiftach-shulman.png" : p.title === "Tomer Bar-Zeev" ? IMG + "img-tomer-barzeev.png" : p.title === "Scott Galit" ? IMG + "img-stu-solomon.png" : p.title === "Stu Solomon" ? IMG + "img-scott-galit.png" : p.title === "Cris Conde" ? IMG + "img-cris-conde.png" : p.title === "Lior Gerenstein" ? IMG + "img-lior-gerenstein.png" : IMG + "img-0" + ((i % 4) + 1) + ".png" })),
+      sectors: [
+        { name: "Cyber", desc: "From threat detection to identity and cloud security, we back category-defining security companies. Our CISO network puts founders in front of the buyers who decide." },
+        { name: "Fintech", desc: "Payments, infrastructure, and financial software built for real institutions. Decades of relationships with the banks, buyers, and regulators that matter." },
+        { name: "Infrastructure", desc: "The compute, data, and developer platforms the next generation of software is built on. We know where the bottlenecks are and how to clear them." },
+        { name: "Vertical Applications", desc: "Software that reshapes how specific industries operate, from the ground up. Deep domain expertise turns a strong product into a repeatable sales motion." },
+        { name: "Defense", desc: "Dual-use and defense technology at the intersection of national security and frontier engineering. We open the doors that shorten the path to first contracts." },
+      ],
       footerCols: [
         { heading: "About", links: ["Team", "Portfolio", "Careers"] },
         { heading: "Verticals", links: ["Cyber", "Infrastructure", "AI", "Defense", "Fintech"] },
@@ -1040,6 +1116,433 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "VcHomepage";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // A document that owns its print CSS (the doc-page starter injects the
+  // meta at runtime; hand-rolled print designs author it) gets no automatic
+  // page geometry and keeps its forced breaks: strip the injected default
+  // @page — write time cannot see a runtime-injected meta — skip the frame
+  // override below, and skip the fakepage-flattening further down. What
+  // still applies: the print baseline and break-hygiene defaults (no @page
+  // in either; low specificity, so the document's own print CSS wins) and
+  // the break-inside relaxation on >page elements (avoid on those cannot
+  // be honored whoever authored it).
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+  if (ownsPrint) {
+    var dst = document.querySelector('style[data-omelette-print-defaults]');
+    if (dst && dst.textContent) {
+      dst.textContent = dst.textContent.replace(/@page\b[^{}]*\{[^}]*\}/, '');
+    }
+  }
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…} or declared print ownership
+  // via the meta above. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+  // Name-presence check, case-insensitive — the same contract as the
+  // instant-PDF path's runtime check in deck-stage-export.ts. The name is
+  // a string literal here because that file interpolates this script into
+  // its print script, so importing a shared constant from it would be a
+  // cycle; measure.test.ts pins the literal so the two cannot drift apart
+  // silently.
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage, ownsPrint: ownsPrint };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (!ownsPrint && __m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          // An owns-print doc's forced breaks are intentional sheet
+          // boundaries, never fake-paged simulation — don't strip them.
+          // The break-inside relaxation above still applies: avoid on a
+          // >page element is impossible to honor whoever authored it.
+          if (
+            !ownsPrint &&
+            (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always')
+          ) {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
 </script>
 </body>
 </html>
