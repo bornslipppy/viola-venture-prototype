@@ -1,0 +1,8 @@
+/* ─────────────────────────────────────────────────────
+   Guesty Nebula Design System — Global Stylesheet
+   Entry point: import this single file in any consumer.
+   ───────────────────────────────────────────────────── */
+
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';

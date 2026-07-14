@@ -1,0 +1,54 @@
+/* ─────────────────────────────────────────────────────
+   Guesty Nebula — Typography Tokens
+   Fonts: Figtree (sans, primary) · Noto Serif Georgian (serif, display)
+   ───────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap');
+
+:root {
+  /* ── Font Families ── */
+  /* NOTE: Production uses "Figtree Guesty" — a custom-licensed variant.
+     This system substitutes the public Google Fonts Figtree as a fallback.
+     Replace with the licensed files when available. */
+  --font-sans:   'Figtree', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif:  'Noto Serif Georgian', ui-serif, Georgia, serif;
+  --font-mono:   ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+
+  /* ── Font Sizes (Figma-verified) ── */
+  --text-xs:   0.75rem;    /* 12px — badges, labels, timestamps */
+  --text-sm:   0.875rem;   /* 14px — base body, form labels, captions */
+  --text-base: 0.875rem;   /* 14px — alias for sm; confirmed Figma "base" = 14px */
+  --text-lg:   1rem;       /* 16px — lg body text */
+  --text-xl:   1.125rem;   /* 18px — xl body, subheadings */
+  --text-2xl:  1.5rem;     /* 24px — h2 desktop */
+  --text-3xl:  1.875rem;   /* 30px — h1 desktop */
+  --text-4xl:  2.25rem;    /* 36px — display */
+
+  /* ── Line Heights ── */
+  --leading-tight:  1.25;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.625;
+
+  /* ── Font Weights (only two weights used in Guesty UI) ── */
+  --weight-regular:  400;  /* body text, descriptions */
+  --weight-semibold: 600;  /* labels, nav, buttons, headings */
+
+  /* ── Letter Spacing ── */
+  --tracking-tight:  -0.025em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+  --tracking-widest:  0.1em;
+}
+
+/* Base typography reset */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

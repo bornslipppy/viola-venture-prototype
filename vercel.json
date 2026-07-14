@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/VcHomepage.dc.html" }
+    { "source": "/", "destination": "/Viola Website.dc.html" }
   ]
 }

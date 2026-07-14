@@ -1,0 +1,58 @@
+/* ─────────────────────────────────────────────────────
+   Guesty Nebula — Color Tokens
+   All values mirror packages/arc-styles/src/global.css
+   ───────────────────────────────────────────────────── */
+
+:root {
+  /* ── Brand Primary: Guesty Teal ── */
+  --color-primary:            hsl(171, 100%, 24%);   /* #007A68 — deep teal */
+  --color-primary-foreground: hsl(0, 0%, 98%);       /* #FAFAFA */
+  --color-ring:               hsl(171, 100%, 24%);   /* focus ring = primary */
+
+  /* ── Backgrounds & Surfaces ── */
+  --color-background:         hsl(0, 0%, 100%);      /* #FFFFFF */
+  --color-card:               hsl(0, 0%, 100%);
+  --color-popover:            hsl(0, 0%, 100%);
+
+  /* ── Foregrounds ── */
+  --color-foreground:         hsl(215, 28%, 17%);    /* #1F2937 — dark navy */
+  --color-card-foreground:    hsl(215, 28%, 17%);
+  --color-popover-foreground: hsl(215, 28%, 17%);
+
+  /* ── Neutral / Muted ── */
+  --color-muted:              hsl(240, 5%, 96%);     /* #F4F4F6 */
+  --color-muted-foreground:   hsl(220, 9%, 46%);     /* #6D7B8C */
+  --color-secondary:          hsl(240, 5%, 96%);
+  --color-secondary-foreground: hsl(215, 28%, 17%);
+  --color-accent:             hsl(240, 5%, 96%);
+  --color-accent-foreground:  hsl(215, 28%, 17%);
+
+  /* ── Borders & Inputs (exact Figma values) ── */
+  --color-border:             rgb(232, 234, 237);    /* #E8EAED */
+  --color-input:              rgb(215, 218, 224);    /* #D7DAE0 */
+
+  /* ── Semantic Status ── */
+  --color-destructive:        hsl(5, 82%, 47%);      /* #D92215 — red */
+  --color-destructive-foreground: hsl(0, 90%, 96%);  /* #FEE9E7 */
+
+  --color-success:            hsl(143, 78%, 36%);    /* #14A34B — green */
+  --color-success-foreground: hsl(139, 51%, 93%);    /* #DDF4E8 */
+
+  --color-information:        hsl(226, 94%, 55%);    /* #2563EB — blue */
+  --color-information-foreground: hsl(217, 100%, 93%); /* #DCE8FF */
+
+  --color-warning:            hsl(32, 95%, 44%);     /* #D97706 — amber */
+  --color-warning-foreground: hsl(48, 96%, 89%);     /* #FEF3C7 */
+
+  /* ── Chart Palette ── */
+  --color-chart-1: hsl(221, 100%, 81%);  /* periwinkle */
+  --color-chart-2: hsl(162, 31%, 48%);   /* teal-green */
+  --color-chart-3: hsl(5, 93%, 74%);     /* coral */
+  --color-chart-4: hsl(227, 75%, 61%);   /* indigo */
+  --color-chart-5: hsl(175, 67%, 24%);   /* dark teal */
+  --color-chart-6: hsl(39, 40%, 80%);    /* sand */
+  --color-chart-7: hsl(337, 62%, 23%);   /* wine */
+  --color-chart-8: hsl(271, 65%, 71%);   /* lavender */
+  --color-chart-9: hsl(180, 46%, 80%);   /* mint */
+  --color-chart-10: hsl(247, 80%, 14%);  /* deep purple */
+}
